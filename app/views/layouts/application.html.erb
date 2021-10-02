@@ -28,12 +28,29 @@
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portafolio Freelancer</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">CV</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contacto</a></li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                    <% if signed_in? %>
+                      <%= link_to "Salir",
+                      destroy_user_session_path,
+                      class: "nav-link py-3 px-0 px-lg-3 rounded",
+                      method: :delete %>
+                    <% else %>
+                      <% link_to "Ingresar",
+                      new_user_session_path,
+                      class: "nav-link py-3 px-0 px-lg-3 rounded"
+                       %>
+                    <% end %>
+                    </li>
                 </ul>
             </div>
         </div>
   </nav>
   <div style="padding-top: 135px">  
+   
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+  
   </div>
 <!-- Footer-->
   <footer class="footer text-center">
