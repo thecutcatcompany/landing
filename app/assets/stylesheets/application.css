@@ -16,3 +16,13 @@
 #signin-form {margin: 0px 0px 50px 0px}
 #signin-form input[type=email] {width: 100%}
 #signin-form input[type=password] {width: 100%}
+
+.btn.btn-primary {
+  color: white
+}
+.btn.btn-secondary {
+  color: white
+}
+.btn.btn-danger {
+  color: white
+}
