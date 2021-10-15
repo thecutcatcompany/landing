@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rails2</title>
+    <title>Administrador</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,48 +18,42 @@
   <body id="page-top">
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" 
-          href="#page-top">Ray Rojas</a>
-        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" 
-          data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" 
-          aria-label="Toggle navigation">Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#portfolio">Portafolio</a></li>
-            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#about">Acerca</a></li>
-            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#contact">Contacto</a></li>
-            <% if signed_in? %>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a href="/proyectos" 
-                class="nav-link py-3 px-0 px-lg-3 rounded">
-                Proyectos
-              </a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a href="/productos" 
-                class="nav-link py-3 px-0 px-lg-3 rounded">
-                Admin
-              </a>
-            </li>
-            <% end %>
-            <li class="nav-item mx-0 mx-lg-1">
-              <% if signed_in? %>
-                <%= link_to "Salir", 
-                  destroy_user_session_path, 
-                  class: "nav-link py-3 px-0 px-lg-3 rounded", 
-                  method: :delete %>
-              <% else %>
-                <%= link_to "Ingresar", 
-                  new_user_session_path,
-                  class: "nav-link py-3 px-0 px-lg-3 rounded" %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+          <a class="navbar-brand" href="#page-top">Perfil Freelance TheCutCatCompany</a>
+          <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              Menu
+              <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#productos">Productos</a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#categorias">Categorías</a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#contact">Ordenes</a></li>
+                 
+                  <% if signed_in? %>
+                  <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded">
+                    Proyectos
+                    </a>
+                  </li>
+                  <% end %>
+
+                  <li class="nav-item mx-0 mx-lg-1">
+                  <% if signed_in? %>
+                    <%= link_to "Salir",
+                    destroy_user_session_path,
+                    class: "nav-link py-3 px-0 px-lg-3 rounded",
+                    method: :delete %>
+                  <% else %>
+                    <% link_to "Ingresar",
+                    new_user_session_path,
+                    class: "nav-link py-3 px-0 px-lg-3 rounded"
+                      %>
+                  <% end %>
+                  </li>
+              </ul>
+          </div>
       </div>
-    </nav>
+  </nav>
   <div style="padding-top: 135px">  
     <div class="container">
       <div class="row justify-content-center">
@@ -78,9 +72,14 @@
           <% end %>
         </div>
       </div>
-    </div>                  
-    <%= yield %>
-  
+    </div>
+
+    <div class="container">      <div class="row">
+        <div class="col">             
+          <%= yield %>
+        </div>
+      </div>  
+    </div>
   </div>
 <!-- Footer-->
   <footer class="footer text-center">

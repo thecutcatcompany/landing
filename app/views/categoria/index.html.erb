@@ -1,0 +1,39 @@
+<link href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" 
+  rel="stylesheet" >
+
+<p id="notice"><%= notice %></p>
+
+<h1>Categoria</h1>
+
+<table id="myTable">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>N Productos</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categoria.each do |categorium| %>
+      <tr>
+        <td><%= categorium.nombre %></td>
+        <td><%= categorium.imagen %></td>
+        <td><%= categorium.nproductos %></td>
+        <td><%= link_to 'Show', categorium %></td>
+        <td><%= link_to 'Edit', edit_categorium_path(categorium) %></td>
+        <td><%= link_to 'Destroy', categorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Categorium', new_categorium_path %>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+</script>
